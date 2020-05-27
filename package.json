@@ -1,0 +1,30 @@
+{
+  "name": "statenext-with-mongo",
+  "version": "1.0.0",
+  "description": "Statenext api for integrate to MongoDB",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
+  },
+  "license": "ISC",
+  "author": "tanamettpk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanametTpk/statenext-with-mongo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TanametTpk/statenext-with-mongo/issues"
+  },
+  "homepage": "https://github.com/TanametTpk/statenext-with-mongo#readme",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.16",
+    "pluralize": "^8.0.0",
+    "require-all": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.153",
+    "@types/mongoose": "^5.7.21"
+  }
+}
