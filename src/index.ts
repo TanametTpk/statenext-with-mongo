@@ -21,7 +21,7 @@ export interface DatabaseOption {
 
 export interface DatabaseSystem {
     services: any
-    routes: any
+    // routes: any
     middlewares: any
     _models: any
 }

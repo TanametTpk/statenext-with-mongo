@@ -14,7 +14,16 @@ module.exports = (model, payload) => {
             path: "/",
             method: "delete",
             middlewares:[middlewares.getQuery],
-        }
+        },
+        getContent: (controller_name) => `
+            {
+                path: "/",
+                method: "delete",
+                action: "delMany",
+                controller: "${controller_name}",
+                middlewares:[middlewares.getQuery],
+            },
+        `
     }
 
 }

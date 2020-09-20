@@ -12,7 +12,16 @@ module.exports = (model, payload) => {
             path: "/",
             method: "post",
             middlewares: [],
-        }
+        },
+        getContent: (controller_name) => `
+            {
+                path: "/",
+                method: "post",
+                action: "create",
+                controller: "${controller_name}",
+                middlewares: [],
+            },
+        `
     }
 
 }

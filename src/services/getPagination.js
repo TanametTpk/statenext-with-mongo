@@ -26,7 +26,16 @@ module.exports = (model, payload) => {
             path: "pages/:page",
             method: "get",
             middlewares:[middlewares.getPagination, middlewares.getQuery, middlewares.getPopulate],
-        }
+        },
+        getContent: (controller_name) => `
+            {
+                path: "pages/:page",
+                method: "get",
+                action: "getPagination",
+                controller: "${controller_name}",
+                middlewares:[middlewares.getPagination, middlewares.getQuery, middlewares.getPopulate],
+            },
+        `
     }
 
 }
