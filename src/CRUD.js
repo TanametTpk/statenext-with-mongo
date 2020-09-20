@@ -37,6 +37,10 @@ module.exports = (model) => {
 
     })
 
+    fileContent = `export defailt [
+        ${fileContent}
+    ]`
+
     return {
         services,
         routes,
