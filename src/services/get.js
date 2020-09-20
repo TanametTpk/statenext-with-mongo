@@ -16,10 +16,12 @@ module.exports = (model, payload) => {
             method: "get",
             middlewares:[middlewares.getQuery, middlewares.getPopulate],
         },
-        routeString: `
+        getContent: (controller_name) => `
             {
                 path: "/",
                 method: "get",
+                action: "get",
+                controller: "${controller_name}",
                 middlewares:[middlewares.getQuery, middlewares.getPopulate],
             },
         `

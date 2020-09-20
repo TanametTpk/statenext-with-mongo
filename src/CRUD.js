@@ -4,7 +4,7 @@ const templateServices = getAll({
     dirname: __dirname + "/services",
 })
 
-module.exports = (model) => {
+module.exports = (model, modelName) => {
 
     let services = {}
     let routes = {}
@@ -12,7 +12,7 @@ module.exports = (model) => {
 
     Object.values(templateServices).map((templateService) => {
 
-        let { service, route, routeString } = templateService(model)
+        let { service, route, getContent } = templateService(model)
         services = {
             ...services,
             ...service
@@ -30,14 +30,14 @@ module.exports = (model) => {
 
         let aleadyHaveFile = fileContent
         if (aleadyHaveFile) {
-            fileContent = aleadyHaveFile + routeString + "\n"
+            fileContent = aleadyHaveFile + getContent(modelName) + "\n"
         }else {
-            fileContent = routeString
+            fileContent = getContent(modelName)
         }
 
     })
 
-    fileContent = `export defailt [
+    fileContent = `import { middlewares } from 'statenext-with-mongo';\nexport default [
         ${fileContent}
     ]`
 

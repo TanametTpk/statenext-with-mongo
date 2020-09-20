@@ -20,11 +20,13 @@ module.exports = (model, payload) => {
             method: "get",
             middlewares:[middlewares.getQuery],
         },
-        routeString: `
+        getContent: (controller_name) => `
             {
                 priority: 1,
                 path: "count",
                 method: "get",
+                action: "count",
+                controller: "${controller_name}",
                 middlewares:[middlewares.getQuery],
             },
         `

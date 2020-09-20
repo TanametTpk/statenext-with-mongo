@@ -17,10 +17,12 @@ module.exports = (model, payload) => {
             method: "delete",
             middlewares: [middlewares.getObjectId],
         },
-        routeString: `
+        getContent: (controller_name) => `
             {
                 path: ":objectId",
                 method: "delete",
+                action: "del",
+                controller: "${controller_name}",
                 middlewares: [middlewares.getObjectId],
             },
         `

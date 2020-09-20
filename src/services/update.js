@@ -16,10 +16,11 @@ module.exports = (model, payload) => {
             method: "put",
             middlewares: [middlewares.getObjectId],
         },
-        routeString: `
+        getContent: (controller_name) => `
             {
                 path: ":objectId",
                 method: "put",
+                controller: "${controller_name}",
                 middlewares: [middlewares.getObjectId],
             },
         `

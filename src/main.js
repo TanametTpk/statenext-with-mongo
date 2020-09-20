@@ -34,14 +34,14 @@ const connect = (models, dbConfigs, options) => {
         
         // create CRUD function and REST route with controller
         let model = createModelLibs(modelName, permission)
-        let crudModel = CRUD(model)
+        let crudModel = CRUD(model, modelName)
 
         // assign services for export
         services[modelName] = crudModel.services
 
         // check for auto create route
         if (options && options.autoRouting) {
-            let routeDir = __dirname + `/autoRoutes`
+            let routeDir = `./autoRoutes`
 
             // if dir not exist then create new one
             if (!fs.existsSync(routeDir)){
