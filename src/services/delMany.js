@@ -14,7 +14,14 @@ module.exports = (model, payload) => {
             path: "/",
             method: "delete",
             middlewares:[middlewares.getQuery],
-        }
+        },
+        routeString: `
+            {
+                path: "/",
+                method: "delete",
+                middlewares:[middlewares.getQuery],
+            },
+        `
     }
 
 }

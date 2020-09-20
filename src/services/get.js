@@ -15,7 +15,14 @@ module.exports = (model, payload) => {
             path: "/",
             method: "get",
             middlewares:[middlewares.getQuery, middlewares.getPopulate],
-        }
+        },
+        routeString: `
+            {
+                path: "/",
+                method: "get",
+                middlewares:[middlewares.getQuery, middlewares.getPopulate],
+            },
+        `
     }
 
 }

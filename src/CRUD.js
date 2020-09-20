@@ -8,10 +8,11 @@ module.exports = (model) => {
 
     let services = {}
     let routes = {}
+    let fileContent = ""
 
     Object.values(templateServices).map((templateService) => {
 
-        let { service, route } = templateService(model)
+        let { service, route, routeString } = templateService(model)
         services = {
             ...services,
             ...service
@@ -27,11 +28,19 @@ module.exports = (model) => {
             }
         }
 
+        let aleadyHaveFile = fileContent
+        if (aleadyHaveFile) {
+            fileContent = aleadyHaveFile + routeString + "\n"
+        }else {
+            fileContent = routeString
+        }
+
     })
 
     return {
         services,
-        routes
+        routes,
+        fileContent
     }
 
 }

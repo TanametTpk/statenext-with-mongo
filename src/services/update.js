@@ -15,7 +15,14 @@ module.exports = (model, payload) => {
             path: ":objectId",
             method: "put",
             middlewares: [middlewares.getObjectId],
-        }
+        },
+        routeString: `
+            {
+                path: ":objectId",
+                method: "put",
+                middlewares: [middlewares.getObjectId],
+            },
+        `
     }
 
 }

@@ -12,7 +12,14 @@ module.exports = (model, payload) => {
             path: "/",
             method: "post",
             middlewares: [],
-        }
+        },
+        routeString: `
+            {
+                path: "/",
+                method: "post",
+                middlewares: [],
+            },
+        `
     }
 
 }

@@ -26,7 +26,14 @@ module.exports = (model, payload) => {
             path: "pages/:page",
             method: "get",
             middlewares:[middlewares.getPagination, middlewares.getQuery, middlewares.getPopulate],
-        }
+        },
+        routeString: `
+            {
+                path: "pages/:page",
+                method: "get",
+                middlewares:[middlewares.getPagination, middlewares.getQuery, middlewares.getPopulate],
+            },
+        `
     }
 
 }

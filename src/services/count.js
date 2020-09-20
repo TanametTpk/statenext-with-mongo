@@ -19,7 +19,15 @@ module.exports = (model, payload) => {
             path: "count",
             method: "get",
             middlewares:[middlewares.getQuery],
-        }
+        },
+        routeString: `
+            {
+                priority: 1,
+                path: "count",
+                method: "get",
+                middlewares:[middlewares.getQuery],
+            },
+        `
     }
 
 }

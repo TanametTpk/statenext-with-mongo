@@ -16,7 +16,15 @@ module.exports = (model, payload) => {
             method: "get",
             middlewares:[middlewares.getObjectId, middlewares.getPopulate],
             priority: 1
-        }
+        },
+        routeString: `
+            {
+                path: ":objectId",
+                method: "get",
+                middlewares:[middlewares.getObjectId, middlewares.getPopulate],
+                priority: 1
+            },
+        `
     }
 
 }
