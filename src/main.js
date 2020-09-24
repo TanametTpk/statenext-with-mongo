@@ -47,8 +47,8 @@ const connect = (models, dbConfigs, options) => {
             if (!fs.existsSync(routeDir)){
                 fs.mkdirSync(routeDir)
             }
-
             fs.writeFileSync(`${routeDir}/${modelName}.ts`, crudModel.fileContent)
+
 
             // assign controller name to routes
             let routesKey = Object.keys(crudModel.routes)

@@ -14,14 +14,14 @@ module.exports = (model, payload) => {
         route:{
             path: ":objectId",
             method: "put",
-            middlewares: [middlewares.getObjectId],
+            middlewares: [middlewares.isValidObjectId, middlewares.getObjectId],
         },
         getContent: (controller_name) => `
             {
                 path: ":objectId",
                 method: "put",
                 controller: "${controller_name}",
-                middlewares: [middlewares.getObjectId],
+                middlewares: [middlewares.isValidObjectId, middlewares.getObjectId],
             },
         `
     }
