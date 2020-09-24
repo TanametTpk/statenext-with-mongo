@@ -15,8 +15,17 @@ module.exports = (model, payload) => {
         route:{
             path: ":objectId",
             method: "delete",
-            middlewares: [middlewares.getObjectId],
-        }
+            middlewares: [middlewares.isValidObjectId, middlewares.getObjectId],
+        },
+        getContent: (controller_name) => `
+            {
+                path: ":objectId",
+                method: "delete",
+                action: "del",
+                controller: "${controller_name}",
+                middlewares: [middlewares.isValidObjectId, middlewares.getObjectId],
+            },
+        `
     }
 
 }

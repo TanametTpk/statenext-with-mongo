@@ -14,9 +14,19 @@ module.exports = (model, payload) => {
         route:{
             path: ":objectId",
             method: "get",
-            middlewares:[middlewares.getObjectId, middlewares.getPopulate],
+            middlewares:[middlewares.isValidObjectId, middlewares.getObjectId, middlewares.getPopulate],
             priority: 1
-        }
+        },
+        getContent: (controller_name) => `
+            {
+                path: ":objectId",
+                method: "get",
+                action: "getSpecific",
+                controller: "${controller_name}",
+                middlewares:[middlewares.isValidObjectId, middlewares.getObjectId, middlewares.getPopulate],
+                priority: 1
+            },
+        `
     }
 
 }
